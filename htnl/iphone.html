@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>完善个人信息</title>
+  <!-- import CSS -->
+  
+   <script src="../static/vue.js"></script>    
+   <meta  charset="utf-8" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+ <!--移动适配-->
+  <script type="text/javascript" src="../static/yidong.js"></script>
+  <link rel="stylesheet" type="text/css" href="../static/yidong.css"/>
+  
+  <script src="../static/_vant@1.3.5@vant/lib/vant.js"></script>
+  <link rel="stylesheet" href="../static/_vant@1.3.5@vant/lib/vant-css/index.css">
+  
+  <style type="text/css">
+  	body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div{margin:0;padding:0;border:0;} body{background:#fff;color:#333;font-size:12px; }  ul,ol{list-style-type:none;} select,input,img,select{vertical-align:middle;}  a{text-decoration:none;} a:link{color:#009;} a:visited{color:#800080;} a:hover,a:active,a:focus{color:#c00;text-decoration:underline;}
+  *{
+  		 font-family: 'FangSong_GB2312';
+  	}	
+  	#app{
+  		width: 100%;
+  		height: auto;
+  		float: left;
+  		background:white;
+  		/*padding-bottom: 1.693333rem;*/
+  	}
+ /* ********************************************************************************************************************************* */  	
+  	#mengs{
+  	background:rgba(255,255,255,0.95);
+  	 /*height: 6.666666rem;*/
+  	 width: 100%;
+  	 height: 100%;
+  	 position: fixed;
+  	 top: 0;
+  	 left: 0;
+  	 z-index: 500;
+  	 /*transition: 0.3s;*/
+	 text-align: center;
+  }
+  #ales{
+  	 width: 3.333333rem;
+  	 height: 0.733333rem;
+  	 margin: 6.333333rem auto;
+  	 position: relative;
+  }
+  #mengs div img{
+  	width: 100%;
+  	height: 100%;
+  }
+   #mengs div p{
+   	  font-size:0.4rem;
+   	  color: #3F3D56;
+   	  font-family:'Microsoft JhengHei';
+   	  font-weight: 600;
+	  margin-top: 1.333333rem;
+   }
+ /* ********************************************************************************************************************************* */
+   .imgs{
+	   width: 100%;
+	   height: 5.626666rem;
+	   margin-bottom: 0.64rem;
+   }
+   .ps{
+	   font-size: 0.426666rem;
+	   /* margin-left: 0.48rem; */
+	   margin-bottom:0.48rem;
+	   font-weight: 600;
+   }
+   #name{
+	   width:100%;
+	   height: 0.96rem;
+	   border: none;
+	   background: white;
+	   border-radius:0.053333rem;
+	   padding-left: 0.266666rem;
+	   font-size: 0.373333rem;
+	   border:0.013333rem solid rgba(234,234,234,1);
+	   box-sizing: border-box;
+   }
+   .ip_box{
+	   width: 100%;
+	   height:0.96rem;
+	   margin-top: 0.32rem;
+	   border-radius:0.053333rem;
+	   overflow: hidden;
+	   margin-bottom: 0.32rem;
+   }
+   .btn{
+	   width: 1.973333rem;
+	   height: 100%;
+	   float: right;
+	   background: #FFECAD;
+	   color: #666666;
+	   line-height: 0.96rem;
+	   text-align: center;
+	   
+   }
+   .btn_cl{
+	   width: 100%;
+	   height: 1.173333rem;
+	   line-height: 1.173333rem;
+	   text-align:center;
+	   background:rgba(255,196,0,1);
+opacity:1;
+border-radius:0.053333rem;
+font-size: 0.453333rem;
+margin-top:0.8rem;
+font-weight: 600;
+   }
+   
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:#999999;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:#999999;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:#999999;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:#999999;
+}
+ .p_box{
+	  font-size: 0.373333rem;
+	  color: #888888;
+	  width: 8.826666rem;
+	  margin: 0.4rem auto;
+	  line-height:0.48rem;
+	  margin-top: 0;
+	  text-align:justify;
+ }
+ .er_box{
+	width:8.72rem;
+height:8.733333rem;
+background:rgba(255,255,255,1);
+opacity:1;
+border-radius:0.266666rem;
+    padding: 0.64rem 0;
+	box-sizing: border-box;
+ }
+ .img_boxss{
+	 width:0.853333rem;
+	 height:0.853333rem;
+	 margin:0 auto 0.48rem auto;
+ }
+ .img_boxss img{
+	 width: 100%;
+	 height: 100%;
+ }
+ .psa_1{
+	text-align: center;
+	font-size: 0.48rem;
+	color: #666666;
+ }
+ .psa_1 a{
+	 color: #FFC400;
+ }
+ .er_box_img{
+	 width: 3.333333rem;
+	 height: 3.333333rem;
+	 margin: 0.48rem auto 0.32rem auto;
+ }
+ .er_box_img img{
+	 width: 100%;
+	 height: 100%;
+ }
+ .psa_2{
+	 font-size: 0.426666rem;
+	 color: #666666;
+	 text-align: center;
+ }
+  </style>
+</head>
+<body style="height: 100%;">
+	<!--body设置高度为100%div设置高度为100%时高度就是视口的高度-->
+	 <div id='mengs'>
+	 	 <div id="ales">
+	 		    <img src="../img/5-121204194026.gif"/>
+	 		    <div id="p_bs"><p>加载中...</p></div>
+	 	   </div>
+	 </div>
+  <div id="app"  style="padding-bottom: 0.4rem;">
+	<img class="imgs" src="../img/gerenxinxi.png"> 
+	<div style="width:9.04rem;margin: 0 auto;">
+	 <!-- <div class="p_box">活动规则活动规则活动规则活动规则活动规则活动规
+活动规则活动规则活动规则活动规则活动规则活动规
+活动规则活动规则活动规则活动规则活动规则活动规
+活动规则活动规则活动规则活动规则活动规则。</div> -->
+	  <p class="ps">首次分享需完善个人信息</p>
+	   <input @blur="to_top" @input="inputFunc" type="text" v-model="names" id="name" placeholder="姓名"/>
+	   <div class="ip_box"><input @blur="to_top" oninput="if(value.length>11)value=value.slice(0,11)" v-model="iphones" @input="inputFunc" type="number" id="name" style="width:7.066666rem;float:left;border-radius:0;" placeholder="手机号"/>
+	        <div @click="yan_click" v-if="yan_show" class="btn">获取验证码</div>
+			<div v-else class="btn" style="background:#DEDEDE;">{{auth_time}}s</div>
+	   </div>
+	   <input @blur="to_top" v-model="yans" @input="inputFunc" type="number" id="name" placeholder="验证码"/>
+	   <div @click="go_home" v-if="btn_show" class="btn_cl">生成海报</div>
+	   <div v-else style="background:#EAEAEA;" class="btn_cl">生成海报</div>
+	 </div>
+	 
+	 <van-popup v-model="pupshow">
+		  <div class="er_box">
+			  <div class="img_boxss"><img src="../img/jiameis.png" ></div>
+			  <p class="psa_1"><a>关注公众号</a>领取海报</p>
+              <p class="psa_1">可获得丰厚推荐奖励</p>
+			  <div class="er_box_img"><img src="../img/_20190514144656.jpg" alt=""></div>
+			  <p class="psa_2">请长按识别二维码</p>
+		  </div>
+	 </van-popup>
+	 
+	 
+	 
+  </div>
+</body>
+  <script src="../static/jq.js"></script>
+  <script src="../static/axios.js"></script>
+  
+  <!-- <script src="//cdn.bootcss.com/eruda/1.4.2/eruda.min.js"></script>
+  <script>eruda.init()</script> -->
+  
+  <script>
+    new Vue({
+      el: '#app',
+      data:function(){
+        return{
+			pupshow:false,
+			
+        	 shows:false,
+			 btn_show:false,
+			 yan_show:true,
+			 names:'',
+			 iphones:'',
+			 yans:'',
+			 auth_time:60,
+			 
+			 getcode:'',//验证码
+        }
+      },
+      methods:{
+		  to_top(){
+		  			window.scrollTo(0,0);    
+		  },
+		 inputFunc(){
+			 this.btn_show = this.names!=''&&this.iphones!=''&&this.yans!=''?true:false;
+		 },
+		 dates_settim(){//倒计时函数
+			 this.yan_show = false;
+			 this.auth_time = 60;
+			 var auth_timetimer =  setInterval(()=>{
+			     this.auth_time--;
+			     if(this.auth_time<=0){
+			         this.yan_show = true;
+			         clearInterval(auth_timetimer);
+			     }
+			 }, 1000);
+		 },
+		 
+      	 yan_click(){//点击获取验证码
+		    if(!(/^1[3456789]\d{9}$/.test(this.iphones))){
+		    	 vant.Toast('手机号码格式有误')
+		    }else{
+				 axios.get('http://poster-brand.cieo.com.cn/wechat/api/getcode?mobile='+this.iphones+'&token='+localStorage.token
+				       ).then(res=>{
+				       	if(res.data.status==200){
+							 console.log(res,'验证码res');
+							 this.getcode = res.data.data;
+							 this.dates_settim()//启动倒计时60s
+							 vant.Toast('验证码已发送请注意查收！');
+						}else if(res.data.status==107){
+				       		vant.Toast('信息过期，正在帮您重新登录');
+							this.wx_login()
+				       	}
+				     }).catch(err=>{console.log(err)});
+			}
+		 },
+		 go_home(){//提交信息
+			           if(this.getcode==this.yans){
+						   $('#mengs').fadeIn(300); 
+			               $.ajax({
+			                        type:'post', 
+			                        url:'http://poster-brand.cieo.com.cn/wechat/api/makeinfo',  
+			                        traditional:true, 
+			                        dataType:"json",  
+			                        data:{
+			                           token:localStorage.token,
+									   mobile:this.iphones,
+									   realname:this.names,
+									   code:this.yans
+			                        },
+			                        success:res=>{ 
+			                           if(res.status==200){
+			                           		console.log(res);
+										    // vant.Toast(res.msg);
+											// window.location.href = 'home.html?action_id='+this.getParam('action_id')
+											this.pupshow = true;
+											$('#mengs').fadeOut(300);
+			                           	}else if(res.status==500&&res.msg=='已经完善信息'){
+			                           		vant.Toast(res.msg);
+											window.location.href = 'home.html?action_id='+this.getParam('action_id')
+			                           	}else{
+											vant.Toast(res.msg);
+											console.log(res);
+											$('#mengs').fadeOut(300);
+										}  
+			                         }  
+			                    });
+			             }
+		 },
+		 wx_login(){
+		     axios.get('http://poster-brand.cieo.com.cn/wechat/api/token'
+		 	       ).then(res=>{
+		           	if(res.status==200){
+							   console.log(res.data.data);
+							   localStorage.token=res.data.data;
+							   window.location.href='/wechat/api/login?token='+localStorage.token+'&callback='+location.href+'&action_id='+this.getParam('action_id');
+		           	}else{
+		           		       vant.Toast('发生了错误');
+		           	}
+		         }).catch(err=>{
+		                console.log(err);
+		         });
+		 },
+		 getParam(paramName){//封装获取url参数函数
+		   paramValue = "", isFound = !1; 
+		   if (window.location.search.indexOf("?") == 0 && window.location.search.indexOf("=") >1){
+		       arrSource = unescape(window.location.search).substring(1, window.location.search.length).split("&"), i = 0; 
+		       while (i < arrSource.length && !isFound) arrSource[i].indexOf("=") > 0 && arrSource[i].split("=")[0].toLowerCase() == paramName.toLowerCase() && (paramValue = arrSource[i].split("=")[1], isFound = !0), i++ 
+		   } 
+		   return paramValue == "" && (paramValue = null), paramValue 
+		  },
+		 isperfect(){//检测是否完善信息
+			axios.get('http://poster-brand.cieo.com.cn/wechat/api/isperfect?token='+localStorage.token
+			      ).then(res=>{
+			      	if(res.data.status==200){
+						if(res.data.msg=='已经完善信息'){
+							window.location.href='./home.html?action_id='+this.getParam('action_id');
+						}			   
+			      	}else if(res.data.status==107){
+			      		vant.Toast('信息过期，正在帮您重新登录');
+			      		this.wx_login()
+			      	}
+			    }).catch(err=>{
+			           console.log(err);
+			    }); 
+		 },
+			 
+      },
+      mounted(){
+      	 $('#mengs').fadeOut(300);
+		 // localStorage.token = '32efd662e3f057b888607a82db27140d';
+		 if(localStorage.token){
+			 this.isperfect()
+		 }else{
+			 this.wx_login()
+	     } 
+      },
+      
+    })
+  </script>
+</html>

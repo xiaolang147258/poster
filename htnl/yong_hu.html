@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>预约报名</title>
+  <!-- import CSS -->
+  
+   <script src="../static/vue.js"></script>    
+   <meta  charset="utf-8" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+ <!--移动适配-->
+  <script type="text/javascript" src="../static/yidong.js"></script>
+  <link rel="stylesheet" type="text/css" href="../static/yidong.css"/>
+  
+  <link rel="stylesheet" type="text/css" href="../static/swiper.css"/>
+  
+  <script src="../static/_vant@1.3.5@vant/lib/vant.js"></script>
+  <link rel="stylesheet" href="../static/_vant@1.3.5@vant/lib/vant-css/index.css">
+  
+  <style type="text/css">
+  	body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div{margin:0;padding:0;border:0;} body{background:#fff;color:#333;font-size:12px; }  ul,ol{list-style-type:none;} select,input,img,select{vertical-align:middle;}  a{text-decoration:none;} a:link{color:#009;} a:visited{color:#800080;} a:hover,a:active,a:focus{color:#c00;text-decoration:underline;}
+  *{
+  		 font-family: 'FangSong_GB2312';
+		 box-sizing: border-box;
+  	}	
+  	#app{
+  		width: 100%;
+  		height:100%;
+  		float: left;
+  		background:white;
+		padding-bottom: 2.466666rem;
+  		/*padding-bottom: 1.693333rem;*/
+		/* position: absolute;
+		top: 0;
+		left: 0; */
+  	}
+ /* ********************************************************************************************************************************* */  	
+  	#mengs{
+  	background:rgba(255,255,255,0.95);
+  	 /*height: 6.666666rem;*/
+  	 width: 100%;
+  	 height: 100%;
+  	 position: fixed;
+  	 top: 0;
+  	 left: 0;
+  	 z-index: 500;
+  	 /*transition: 0.3s;*/
+	 text-align: center;
+  }
+  #ales{
+  	 width: 3.333333rem;
+  	 height: 0.733333rem;
+  	 margin: 6.333333rem auto;
+  	 position: relative;
+  }
+  #mengs div img{
+  	width: 100%;
+  	height: 100%;
+  }
+   #mengs div p{
+   	  font-size:0.4rem;
+   	  color: #3F3D56;
+   	  font-family:'Microsoft JhengHei';
+   	  font-weight: 600;
+	  margin-top: 1.333333rem;
+   }
+ /* ********************************************************************************************************************************* */
+
+   
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:#999999;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:#999999;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:#999999;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:#999999;
+}
+.top_box_f{
+	width: 100%;
+	height: 9.28rem;
+	position: relative;
+	margin-bottom: 0.64rem;
+}
+.top_box_f img{
+	width: 100%;
+	height: 2.906666rem;
+	
+	
+}
+.top_box_c{
+	width: 9.04rem;
+	height: 7.466666rem;
+	box-shadow:0 0.213333rem 0.32rem rgba(255,218,213,1);
+opacity:1;
+border-radius:0.32rem;
+   position: absolute;
+   left: 0.48rem;
+   top: 1.813333rem;
+   background: white;
+   padding: 0.466666rem 0.32rem;
+   box-sizing: border-box;
+}
+.top_box_c img{
+	width: 5.146666rem;
+	height: 1.266666rem;
+	margin-left: 1.626666rem;
+	margin-bottom: 0.506666rem;
+	margin-top: 0.04rem;
+}
+.video_s{
+	width: 8.4rem;
+	height: 4.72rem;
+	margin: auto;
+	background:url('../img/sa.png');
+	background-size:100% 100%;background-repeat:no-repeat;
+	border-radius: 0.266666rem;
+	overflow: hidden;
+}
+.ht_img_p_f{
+	width:9.04rem;
+	margin: auto;
+}
+.ht_img_p_f img{
+	width: 100%;
+	height: 5.626666rem;
+	border-radius:0.32rem;
+}
+.ht_img_p_f p{
+	width: 100%;
+	text-align:justify;
+	font-size: 0.373333rem;
+	color: #666666;
+	line-height:0.60rem;
+	margin-top: 0.32rem;
+	font-family:PingFang SC;
+}
+.inp_box{
+	width: 9.04rem;
+	height: 6.24rem;
+	border-radius: 0.2rem;
+	margin: 0.64rem auto;
+	background: url('../img/jianbian.png');
+	background-size:100% 100%;background-repeat:no-repeat;
+	padding: 0.466666rem 0.466666rem 0.64rem 0.466666rem;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.inp_box p{
+	font-size: 0.426666rem;
+	color: white;
+	text-align:center;
+	margin-bottom:0.64rem;
+	width: 8.106666rem;
+	overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+
+}
+.inp_box input{
+	width:8.106666rem;
+	height: 0.96rem;
+	background: white;
+	border: none;
+	border-radius:0.053333rem;
+	margin-bottom: 0.32rem;
+	font-size: 0.373333rem;
+	padding-left: 0.266666rem;
+	box-sizing: border-box;
+}
+.inp_box button{
+	width:8.106666rem;
+height:1.173333rem;
+background:rgba(255,196,0,1);
+opacity:1;
+border-radius:0.053333rem;
+line-height: 1.173333rem;
+text-align: center;
+font-size: 0.453333rem;
+border: none;
+margin-top: 0.16rem;
+color: white;
+}
+.tui_box{
+	width:100%;
+    height:1.173333rem;
+	position: fixed;
+	left: 0;
+	bottom: 0.653333rem;
+	z-index: 500;
+}
+.tui_box div{
+	width:9.04rem;
+height:1.173333rem;
+background:rgba(255,196,0,1);
+box-shadow:0 0.213333rem 0.32rem rgba(247,221,150,1);
+opacity:1;
+border-radius:0.586666rem;
+line-height: 1.173333rem;
+text-align: center;
+margin:auto;
+font-size: 0.453333rem;
+font-weight: 600;
+}
+.swiper_box{
+	width: 100%;
+	height: 10.093333rem;
+	border-top:0.013333rem solid #DEDEDE;
+	border-bottom:0.013333rem solid #DEDEDE;
+}
+.swiper_box_title{
+	font-size: 0.56rem;
+	color: #666666;
+	margin-top:0.64rem;
+	text-align: center;
+	margin-bottom: 0.32rem;
+}
+.swiper-container{
+	width: 100%;
+	height: 8.093333rem;
+	
+}
+.swiper-slide{
+	width: 100%;
+	height:8.093333rem;
+	padding: 0 0.48rem;
+	
+}
+.swiper-slide img{
+	width: 9.04rem;
+	height: 5.626666rem;
+	border-radius:0.32rem;
+	margin-bottom: 0.32rem;
+}
+.titles{
+	text-align: center;
+	font-size: 0.426666rem;
+	color: #FFC400;
+	font-weight: 600;
+	margin-bottom: 0.2rem;
+	width: 9.04rem;
+	overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.titles2{
+	text-align: center;
+	width: 9.04rem;
+	font-size:0.373333rem;
+	color:#666666;
+	overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.img_p{
+	width: 8.666666rem;
+	height: 11.106666rem;
+	margin: 0.773333rem auto 0 auto;
+}
+.img_p img{
+	width: 100%;
+	height: 100%;
+}
+  </style>
+</head>
+<body style="height: 100%;">
+	<script src="../static/swiper.js"></script>
+	
+	<!--body设置高度为100%div设置高度为100%时高度就是视口的高度-->
+	 <div id='mengs'>
+	 	 <div id="ales">
+	 		    <img src="../img/5-121204194026.gif"/>
+	 		    <div id="p_bs"><p>加载中...</p></div>
+	 	   </div>
+	 </div>
+  <div id="app">
+	
+	<div class="top_box_f">
+		<img src="../img/shaf.png">
+		<div class="top_box_c">
+			<img :src="cal_act.title_img">
+			<video  class="video_s" ref="video" controls="controls" :src="cal_act.video_url" webkit-playsinline='true' playsinline='true'></video>
+		</div>
+	</div>
+	
+	<div class="ht_img_p_f">
+		<img :src="cal_act.img_url">
+		<p>{{cal_act.content}}</p>
+	</div>
+	
+	<div class="inp_box">
+		<p>{{cal_act.title}}</p>
+		<input type="text" id="name" v-model="names" placeholder="姓名"/>
+		<input oninput="if(value.length>11)value=value.slice(0,11)" type="number" id="iphone" v-model="iphones" placeholder="手机号码"/>
+		<button @click="go_home" type="button">提交</button>
+	</div>
+    
+<!-- 轮播区 -->		
+	<div class="swiper_box">
+		<p v-if="act_id==4" class="swiper_box_title">为什么要让孩子来CKE学习</p>
+		<p v-if="act_id==6" class="swiper_box_title">为什么要让孩子来CLS-A学习</p>
+<div class="swiper-container">
+<!-- 加美幼儿园 -->		
+    <div v-if="act_id==4" class="swiper-wrapper">
+        <div class="swiper-slide">
+			<img src="../img/sasoma.png" alt="">
+			<p class="titles">办园理念</p>
+			<p class="titles2">用爱施教 以智启迪 静待花开</p>
+		</div>
+		 <div class="swiper-slide">
+			<img src="../img/_20190428112927.jpg" alt="">
+			<p class="titles">办园目标</p>
+			<p class="titles2">创办国内一流、具有国际多元文化品格的国际幼儿园</p>
+		</div>
+		 <div class="swiper-slide">
+			<img src="../img/_20190428152819.jpg" alt="">
+			<p class="titles">办园宗旨</p>
+			<p class="titles2">播种幸福，奠基未来，给孩子一个幸福快乐的童年</p>
+		</div>
+    </div>
+<!-- 雅居乐外国语学校 -->	
+	<div v-if="act_id==6" class="swiper-wrapper">
+	    <div class="swiper-slide">
+			<img src="../img/_20190516100741.jpg" alt="">
+			<p class="titles">教育理念</p>
+			<p class="titles2">学贯中西，博古通今</p>
+		</div>
+		 <div class="swiper-slide">
+			<img src="../img/_20190516100752.jpg" alt="">
+			<p class="titles">教育使命</p>
+			<p class="titles2">传承中华文化，拓展国际视野</p>
+		</div>
+		 <div class="swiper-slide">
+			<img src="../img/_20190516100758.jpg" alt="">
+			<p class="titles">教育目标</p>
+			<p class="titles2">端庄、典雅、明达、大气</p>
+		</div>
+	</div>
+	
+	
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+</div>
+</div>
+<!-- 图片文字 -->
+<div class="img_p">
+	<img v-if="act_id==4" src="../img/sf.png" alt="">
+	<img v-if="act_id==6" src="../img/sf (1).png" alt="">
+</div>
+ 
+	<div @click="go_iphone" class="tui_box"><div>推荐有奖</div></div>
+  </div>
+</body>
+  <script src="../static/jq.js"></script>
+  <script src="../static/axios.js"></script>
+ 
+  <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+  <script type="text/javascript" src="../static/wx_config.js"></script>
+  <!-- <script src="//cdn.bootcss.com/eruda/1.4.2/eruda.min.js"></script>
+  <script>eruda.init();</script> -->
+  <script>
+    new Vue({
+      el: '#app',
+      data:function(){
+        return{
+        	 shows:false,
+			 btn_show:false,
+			 names:'',
+			 iphones:'',
+			 yans:'',
+			 auth_time:60,
+			 yan_show:true,
+				
+			 getcode:'',
+			 
+			 cal_act:'',
+			 
+			 act_id:'',
+        }
+      },
+      methods:{
+		  go_iphone(){
+			  window.location.href = 'iphone.html?action_id='+this.getParam('action_id');
+		  },
+		  
+		  to_top(){
+			window.scrollTo(0,0);    
+		  },
+		  
+		   dates_settim(){//倒计时函数
+		  			 this.yan_show = false;
+		  			 this.auth_time = 60;
+		  			 var auth_timetimer =  setInterval(()=>{
+		  			     this.auth_time--;
+		  			     if(this.auth_time<=0){
+		  			         this.yan_show = true;
+		  			         clearInterval(auth_timetimer);
+		  			     }
+		  			 }, 1000);
+		  },
+		   yan_click(){//点击获取验证码
+		     if(!(/^1[3456789]\d{9}$/.test(this.iphones))){
+		     	 vant.Toast('手机号码格式有误')
+		     }else{
+				         if(localStorage.token){
+							 axios.get('http://poster-brand.cieo.com.cn/wechat/api/getcode?mobile='+this.iphones+'&token='+localStorage.token
+		  				       ).then(res=>{
+		  				       	if(res.data.status==200){
+		  							 console.log(res,'验证码');
+		  							 this.getcode = res.data.data;
+		  							 this.dates_settim()//启动倒计时60s
+		  							 vant.Toast('验证码已发送请注意查收！');
+		  						}else if(res.data.status==107){
+									 vant.Toast('信息过期，正在帮您重新登录');
+		          		             this.wx_login();
+		          	            }
+		  				     }).catch(err=>{console.log(err)});
+						 }else{
+							 console.log(localStorage.token,'token报错');
+						 }
+		  				 
+		  			}
+		  },
+		  
+		 inputFunc(){
+			 this.btn_show = this.iphones!=''&&this.names!=''?true:false;
+		 },
+		 
+  getParam(paramName){//封装获取url参数函数
+    paramValue = "", isFound = !1; 
+    if (window.location.search.indexOf("?") == 0 && window.location.search.indexOf("=") > 1) { 
+        arrSource = unescape(window.location.search).substring(1, window.location.search.length).split("&"), i = 0; 
+        while (i < arrSource.length && !isFound) arrSource[i].indexOf("=") > 0 && arrSource[i].split("=")[0].toLowerCase() == paramName.toLowerCase() && (paramValue = arrSource[i].split("=")[1], isFound = !0), i++ 
+    } 
+    return paramValue == "" && (paramValue = null), paramValue 
+   },
+		 
+		 go_home(){
+			 this.inputFunc();
+			 if(this.btn_show){
+				 if(!(/^1[3456789]\d{9}$/.test(this.iphones))){
+			 	 vant.Toast('手机号码格式有误')
+			 }else{
+				$('#mengs').fadeIn(300); 
+				// if(this.getcode==this.yans){
+				    $.ajax({
+				             type:'post', 
+				             url:'http://poster-brand.cieo.com.cn/wechat/api/joinAction',
+				             traditional:true, 
+				             dataType:"json",  
+				             data:{
+				                token:localStorage.token,
+								        mobile:this.iphones,
+								        code:this.yans,
+								        realname:this.names,
+										action_id:this.getParam('action_id'),
+										agent:this.getParam('agent'),
+										url:window.location.href+'?action_id='+this.getParam('action_id')+'&agent='+this.getParam('agent')
+				             },
+				             success:res=>{
+				                if(res.status==200){
+									console.log(res,'报名')
+									        	this.$toast({message:'报名成功，推荐3位好友领取全部课程',duration:5000});
+									          $('#mengs').fadeOut(300);
+														// window.location.href = 'y_home.html?action_id='+this.getParam('action_id')
+				                	}else if(res.status==500){
+										if(res.msg=='已经报名'){
+											    this.$toast({message:'您已经报名过了，不能重复报名',duration:5000});
+											}else{
+												this.$toast({message:res.msg,duration:5000});
+											}
+										    console.log(res);    
+										    $('#mengs').fadeOut(300);
+				                	}
+				              }  
+				         });
+				  // } 
+			 }
+			}else{
+				this.$toast({message:'请先完善信息！',duration:2000});
+			}
+			 
+		 },
+		wx_login(){
+		    axios.get('http://poster-brand.cieo.com.cn/wechat/api/token'
+			       ).then(res=>{
+		          	if(res.status==200){
+									   console.log(res.data.data);
+									   localStorage.token=res.data.data;
+									   window.location.href='/wechat/api/login?token='+localStorage.token+'&callback='+location.href+'&agent='+this.getParam('agent')+'&action_id='+this.getParam('action_id');
+		          	}
+		        }).catch(err=>{
+		               console.log(err);
+		        });
+		},
+		isperfect(){//检测是否完善信息
+					axios.get('http://poster-brand.cieo.com.cn/wechat/api/isperfect?token='+localStorage.token
+					      ).then(res=>{
+					      	if(res.status==200){
+								console.log(res.data,'是否完善信息');
+								if(res.data.msg=='已经完善信息'){
+									// this.$toast({message:'您已提交过信息了',duration:0});
+									// window.location.href = 'y_home.html?action_id='+this.getParam('action_id')
+								}else if(res.data.msg=='token失效'){
+									vant.Toast('信息过期，正在帮您重新登录');
+					      		    this.wx_login()
+								   }			   
+					      	}else{
+					      		vant.Toast(res.msg);
+								   console.log(res)
+					      	}
+					    }).catch(err=>{
+					           console.log(err);
+					    }); 
+		}, 
+		
+		  wxconfig(title,desc,link,imgUrl){//配置微信分享
+			  let _url = '';
+			  if (window.__wxjs_is_wkwebview === true) {
+			    _url = window.location.href.split('#')[0] || window.location.href
+			  } else {
+			    _url = window.location.href
+			  }
+				   axios.get('http://poster-brand.cieo.com.cn/wechat/api/getJSSDKConfig?token='+localStorage.token+'&url='+encodeURIComponent(_url)
+			    	    ).then(res=>{
+			    	    	 if(res.status = 200){
+								      
+			    	    	 	      console.log(res,'微信sdk');
+			    	    	 	      checkJsApi(res.data,title,desc,link,imgUrl);   
+			    	    	 }
+			            }).catch(err=>{
+			            	 console.log(err);
+			            	 this.$toast({message:'网络错误',duration:3000});
+			          });
+			},
+			
+			git_act(){//获取数据
+				axios.get('http://poster-brand.cieo.com.cn/wechat/api/getJoinInfo?token='+localStorage.token+'&action_id='+this.getParam('action_id')
+				// axios.get('http://poster-brand.cieo.com.cn/wechat/api/getJoinInfo?token='+localStorage.token+'&action_id=4'
+				      ).then(res=>{
+				      	if(res.status==200){
+						   if(res.data.status==200){
+							   console.log(res.data,'展示数据');
+							   this.cal_act = 	res.data.data;
+							   
+							   let val =  this.act_id==4?'加美国际幼儿园邀请送福利！':(this.act_id==6?'雅居乐加拿达外国语学校邀请送福利！':'');
+							   
+							   this.wxconfig(val,'邀请好友即可获得惊喜奖励',window.location.href,this.cal_act.img_url);//配置微信分享
+							   $('title').html(this.cal_act.top_title)
+						   }else{
+							   this.$toast({message:res.data.msg,duration:3000});
+							   console.log(res.data);
+						   }
+				      	}else{
+							this.$toast({message:'网络错误',duration:3000});
+				      		console.log(res)
+				      	}
+				    }).catch(err=>{
+				           console.log(err);
+				    }); 
+			},
+      },
+      mounted(){
+		  this.act_id = this.getParam('action_id');
+		  
+		  console.log(this.act_id);
+		  
+      	 $('#mengs').fadeOut(300);
+		 // localStorage.token = '0d3b35bee9e56edbeb647d7a835b9698';
+		 if(localStorage.token){
+			 this.isperfect()//完成后需要改回来
+			 this.git_act();
+		 }else{
+			 this.wx_login()
+		 };
+		 console.log(this.getParam('agent'),'url参数');	 
+window.setTimeout(()=>{
+  var mySwiper = new Swiper ('.swiper-container', {
+    loop: true, // 循环模式选项
+    // 如果需要分页器
+    pagination: {
+      el: '.swiper-pagination',
+    },
+	observer:true,//修改swiper自己或子元素时，自动初始化swiper 
+observeParents:false,//修改swiper的父元素时，自动初始化swiper 
+onSlideChangeEnd:function(swiper){ 
+　　　swiper.update();
+　　　mySwiper.startAutoplay();
+　　   mySwiper.reLoop();  
+}
+  })        
+},100)	
+      },
+      
+    })
+  </script>
+</html>
